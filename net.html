@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Saudi Stays – Hotels in Saudi Arabia</title>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/hotel-style-saudi.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+<script>
+(function(){var t;try{t=localStorage.getItem("theme")}catch(e){}
+if(!t)t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";
+document.documentElement.setAttribute("data-theme",t)})();
+</script>
+<style>
+:root{--bg:#F2F6F5;--bg2:#E6EEEC;--card:#FFFFFF;--ink:#0D2B30;--mute:#4D6B6F;--line:#D3E0DE;--teal:#0F7C7C;--teal2:#18A5A0;--gold:#C8972B;--shadow:0 14px 40px rgba(13,43,48,.12);--hero1:#0B3B42;--hero2:#0F7C7C;--hero3:#C8972B}
+[data-theme=dark]{--bg:#091416;--bg2:#0E1D20;--card:#12272A;--ink:#E7F2EF;--mute:#93B0AD;--line:#21393C;--teal:#3CC9C0;--teal2:#18A5A0;--gold:#E3B24A;--shadow:0 14px 40px rgba(0,0,0,.45);--hero1:#06191C;--hero2:#0B4A4C;--hero3:#8A6420}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:'Outfit',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65;transition:background .5s,color .5s;padding-bottom:env(safe-area-inset-bottom,0px)}
+h1,h2,h3,h4{font-family:'Marcellus',Georgia,serif;font-weight:400;line-height:1.2}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+
+</style>
+</head>
+<body>
+
+<div class="topnav" id="myTopnav">
+    <a href="#hotels" class="active">Hotel</a>
+    <a href="#haram">Near Haram</a>
+    <a href="#nabawi">Near Nabawi</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#explore">Explore</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+    <!-- <a href="#about">About</a> -->
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+  
+  <script>
+  function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
+    }
+  }
+  </script>
+<header><b>GrandStay</b>
+<nav></nav>
+<button id="theme" aria-label="Toggle dark mode"><span>🌙</span></button></header>
+
+<div class="hero" id="hero">
+<h1 id="title">GrandStay – Hotel Booking & Reservations</h1>
+<p>Makkah, Madinah, Jeddah aur Riyadh ke behtareen hotels, rooms aur room videos – sab ek jagah.</p>
+<a class="btn" href="#hotels">Explore Hotels</a>
+</div>
+
+<section id="hotels"><h2>Our Hotels</h2><div class="grid row-3" id="hotelGrid"></div></section>
+<section id="haram" class="alt"><h2>Hotels Near Haram (Makkah)</h2><div class="grid row-2" id="haramGrid"></div></section>
+<section id="nabawi"><h2>Hotels Near Masjid Nabawi (Madinah)</h2><div class="grid row-2" id="nabawiGrid"></div></section>
+<section id="gallery" class="alt"><h2>Room Gallery</h2><div class="grid row-4" id="galleryGrid"></div></section>
+<section id="explore"><h2>Explore Saudi Arabia</h2><div class="grid row-4" id="exploreGrid"></div>
+<p style="text-align:center;margin-top:28px;color:var(--mute)">Visa packages aur rules badalte rehte hain – latest info ke liye <a href="https://www.visitsaudi.com" target="_blank" rel="noopener" style="color:var(--teal)">Visit Saudi</a> official site dekhein.</p></section>
+<section id="services" class="alt"><h2>Travel Services</h2><div class="grid row-4" id="servicesGrid"></div></section>
+<section id="facilities"><h2>Hotel Facilities</h2><div class="grid row-3" id="facGrid"></div></section>
+<section id="contact" class="alt contact"><h2>Book via WhatsApp</h2>
+<div class="grid row-9" style="align-items:center">
+<p class="grid-item">Booking, rates aur availability ke liye humein WhatsApp karein.</p>
+<div class="grid-item"><a class="btn" href="https://wa.me/923009224346" target="_blank" rel="noopener">WhatsApp: 0300 9224346</a></div>
+</div></section>
+<footer>© 2026 Saudi Stays · <a href="https://wa.me/923009224346" target="_blank" rel="noopener">03009224346</a></footer>
+<a class="fab" href="https://wa.me/923009224346?text=Assalam%20o%20Alaikum%2C%20hotel%20booking%20ke%20baray%20me%20maloomat%20chahiye." target="_blank" rel="noopener" aria-label="WhatsApp">&#9990;</a>
+
+<script>
+// ---- Edit this list: add hotels/rooms and paste your real YouTube links in "video" ----
+var HOTELS=[
+{name:"Fairmont Makkah Clock Royal Tower",city:"Makkah",stars:5,icon:"🕋",c:"#0B1F3A,#1565C0",desc:"Haram ke bilkul qareeb, Clock Tower complex me luxury hotel.",tags:["Haram View","Restaurants","Lift Access"],rooms:[
+ {n:"Deluxe Room",d:"Comfortable room, city ya Kaaba view options.",video:"https://www.youtube.com/results?search_query=Fairmont+Makkah+Clock+Royal+Tower+deluxe+room"},
+ {n:"Kaaba View Suite",d:"Spacious suite, living area ke sath.",video:"https://www.youtube.com/results?search_query=Fairmont+Makkah+Clock+Royal+Tower+suite"}]},
+{name:"Swissôtel Al Maqam Makkah",city:"Makkah",stars:5,icon:"🌙",c:"#1565C0,#42A5F5",desc:"Abraj Al Bait complex me modern 5-star hotel.",tags:["Near Haram","Family Rooms","Dining"],rooms:[
+ {n:"Superior Room",d:"Aaramdeh room, family ke liye munasib.",video:"https://www.youtube.com/results?search_query=Swissotel+Al+Maqam+Makkah+room"},
+ {n:"Executive Suite",d:"Bara suite, extra seating space.",video:"https://www.youtube.com/results?search_query=Swissotel+Al+Maqam+Makkah+suite"}]},
+{name:"Pullman ZamZam Madina",city:"Madinah",stars:5,icon:"🕌",c:"#0B1F3A,#42A5F5",desc:"Masjid an-Nabawi ke qareeb, ziyarat ke liye behtareen location.",tags:["Near Masjid Nabawi","Buffet","Lift Access"],rooms:[
+ {n:"Classic Room",d:"Saaf suthra aur sukoon wala room.",video:"https://www.youtube.com/results?search_query=Pullman+ZamZam+Madina+room"},
+ {n:"Family Suite",d:"Bare groups ke liye connecting rooms.",video:"https://www.youtube.com/results?search_query=Pullman+ZamZam+Madina+suite"}]},
+{name:"Madinah Hilton",city:"Madinah",stars:5,icon:"🌴",c:"#1565C0,#0B1F3A",desc:"Haram area me Hilton ki mashhoor service aur comfort.",tags:["Haram Area","Restaurants","Wi‑Fi"],rooms:[
+ {n:"King Room",d:"Bara bed, modern facilities.",video:"https://www.youtube.com/results?search_query=Madinah+Hilton+room"},
+ {n:"Twin Room",d:"Do beds, dosto ya family ke liye.",video:"https://www.youtube.com/results?search_query=Madinah+Hilton+twin+room"}]},
+{name:"The Ritz-Carlton Jeddah",city:"Jeddah",stars:5,icon:"🌊",c:"#42A5F5,#0B1F3A",desc:"Red Sea ke kinare luxury resort style hotel.",tags:["Sea View","Pool","Spa"],rooms:[
+ {n:"Deluxe Sea View",d:"Samandar ka khoobsurat nazara.",video:"https://www.youtube.com/results?search_query=Ritz+Carlton+Jeddah+room"},
+ {n:"Premier Suite",d:"Luxury suite, private lounge.",video:"https://www.youtube.com/results?search_query=Ritz+Carlton+Jeddah+suite"}]},
+{name:"Four Seasons Riyadh at Kingdom Centre",city:"Riyadh",stars:5,icon:"🏙️",c:"#0B1F3A,#1565C0",desc:"Riyadh ke dil me Kingdom Centre tower ke andar.",tags:["City View","Shopping","Business"],rooms:[
+ {n:"Deluxe City Room",d:"Shehar ke views wala modern room.",video:"https://www.youtube.com/results?search_query=Four+Seasons+Riyadh+Kingdom+Centre+room"},
+ {n:"Executive Suite",d:"Business travellers ke liye suite.",video:"https://www.youtube.com/results?search_query=Four+Seasons+Riyadh+suite"}]}
+];
+var WA="923009224346";
+function wa(t){return "https://wa.me/"+WA+"?text="+encodeURIComponent(t)}
+function add(id,html,cls,i,n){var c=document.getElementById(id),e=document.createElement("div");e.className="card "+cls;e.style.transitionDelay=(i%n)*110+"ms";e.innerHTML=html;c.appendChild(e);return e}
+function fill(id,items){items.forEach(function(x,i){add(id,x,"mini",i,4)})}
+
+HOTELS.forEach(function(h,i){
+ var rooms=h.rooms.map(function(r){
+  var msg="Assalam o Alaikum, "+h.name+" ("+r.n+") ki booking ke baray me maloomat chahiye.";
+  return '<div class="room"><h4>'+r.n+'</h4><p>'+r.d+'</p><div class="acts"><a class="yt" href="'+r.video+'" target="_blank" rel="noopener">▶ Room Video</a><a class="wa" href="'+wa(msg)+'" target="_blank" rel="noopener">WhatsApp</a></div></div>'}).join("");
+ var el=add("hotelGrid",'<div class="banner" style="background:linear-gradient(135deg,'+h.c+')"><i>'+h.icon+'</i></div><div class="body"><h3>'+h.name+'</h3><div class="meta">'+h.city+' · '+"★".repeat(h.stars)+'</div><p>'+h.desc+'</p><div class="tags">'+h.tags.map(function(t){return '<span>'+t+'</span>'}).join("")+'</div><button class="toggle" aria-expanded="false">View Rooms</button><div class="rooms"><div>'+rooms+'</div></div></div>',"",i,3);
+ var b=el.querySelector(".toggle");
+ b.onclick=function(){var o=el.classList.toggle("open");b.firstChild.nodeValue=o?"Hide Rooms":"View Rooms";b.setAttribute("aria-expanded",o)};
+});
+
+var NEAR=[
+{h:"Fairmont Makkah Clock Royal Tower",b:"Haram ke bilkul saath",hot:1,t:"Abraj Al Bait complex – Masjid al-Haram tak chand minute ka paidal rasta. Family rooms, restaurants, lift access."},
+{h:"Swissôtel Al Maqam Makkah",b:"Haram ke bilkul saath",hot:1,t:"Abraj Al Bait complex me, Haram tak asaan paidal access. Family rooms aur dining."}];
+var NAB=[
+{h:"Pullman ZamZam Madina",t:"Masjid an-Nabawi ke qareeb, walking distance. Family suites, buffet aur lift access."},
+{h:"Madinah Hilton",t:"Haram area me, paidal ziyarat ke liye munasib. King/Twin rooms, restaurants, Wi‑Fi."}];
+fill("haramGrid",NEAR.map(function(n){return '<div class="body"><span class="badge hot">High Priority</span><span class="badge">'+n.b+'</span><h3>'+n.h+'</h3><p>'+n.t+'</p><div class="acts"><a class="wa" href="'+wa("Assalam o Alaikum, "+n.h+" ki booking chahiye.")+'" target="_blank" rel="noopener">WhatsApp</a></div></div>'}));
+fill("nabawiGrid",NAB.map(function(n){return '<div class="body"><span class="badge">Walking Distance</span><span class="badge">Family Rooms</span><h3>'+n.h+'</h3><p>'+n.t+'</p><div class="tags"><span>Wi‑Fi</span><span>Restaurant</span><span>Lift</span></div><div class="acts"><a class="wa" href="'+wa("Assalam o Alaikum, "+n.h+" ki booking chahiye.")+'" target="_blank" rel="noopener">WhatsApp</a></div></div>'}));
+var k=0;HOTELS.forEach(function(h){h.rooms.forEach(function(r){add("galleryGrid",'<div class="tile" style="background:linear-gradient(135deg,'+h.c+')">'+h.icon+'</div><div class="body"><h4>'+r.n+'</h4><div class="meta">'+h.name+'</div><div class="acts"><a class="yt" href="'+r.video+'" target="_blank" rel="noopener">▶ Video</a></div></div>',"mini",k++,4)})});
+fill("exploreGrid",[["🕋","Makkah","Umrah aur Hajj ka muqaddas shehar."],["🕌","Madinah","Masjid an-Nabawi aur ziyarat ki jagahen."],["🌊","Jeddah","Red Sea corniche, Al-Balad old town."],["🪨","AlUla – Elephant Rock","Mashhoor sandstone rock formation aur registan ke nazare."]].map(function(x){return '<div class="body"><span class="ic">'+x[0]+'</span><h3>'+x[1]+'</h3><p>'+x[2]+'</p></div>'}));
+fill("servicesGrid",[["✈️","Airport Pickup"],["🚌","Local Transport"],["👨‍👩‍👧‍👦","Family Tours"],["🕋","Umrah Travel Assistance"]].map(function(x){return '<div class="body"><span class="ic">'+x[0]+'</span><h3>'+x[1]+'</h3><div class="acts" style="justify-content:center"><a class="wa" href="'+wa("Assalam o Alaikum, "+x[1]+" ke baray me maloomat chahiye.")+'" target="_blank" rel="noopener">WhatsApp</a></div></div>'}));
+fill("facGrid",[["🏊","Swimming Pool"],["🍳","Breakfast"],["📶","Wi‑Fi"],["🅿️","Parking"],["🍽️","Restaurant"],["👪","Family Facilities"]].map(function(x){return '<div class="body"><span class="ic">'+x[0]+'</span><h3>'+x[1]+'</h3></div>'}));
+
+// Hero: letter-by-letter title + stars
+var t=document.getElementById("title");t.setAttribute("aria-label",t.textContent);
+t.innerHTML=t.textContent.split("").map(function(c,i){return '<span aria-hidden="true" style="animation-delay:'+(i*45)+'ms">'+(c===" "?"&nbsp;":c)+'</span>'}).join("");
+var hero=document.getElementById("hero");
+for(var s=0;s<26;s++){var d=document.createElement("i");d.className="star";d.style.cssText="left:"+Math.random()*100+"%;top:"+Math.random()*80+"%;animation-delay:"+(Math.random()*4)+"s;transform-origin:center";hero.appendChild(d)}
+
+// Scroll reveal
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("show","in");io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll(".card,section").forEach(function(n){io.observe(n)});
+
+// Theme toggle
+var root=document.documentElement,tb=document.getElementById("theme");
+function sync(){tb.firstChild.textContent=root.getAttribute("data-theme")==="dark"?"☀️":"🌙"}
+tb.onclick=function(){var n=root.getAttribute("data-theme")==="dark"?"light":"dark";root.setAttribute("data-theme",n);try{localStorage.setItem("theme",n)}catch(e){}sync()};
+sync();
+</script>
+</body>
+</html>
