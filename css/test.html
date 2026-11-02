@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    ar NEAR=[
+{h:"Fairmont Makkah Clock Royal Tower",b:"Haram ke bilkul saath",hot:1,t:"Abraj Al Bait complex – Masjid al-Haram tak chand minute ka paidal rasta. Family rooms, restaurants, lift access."},
+{h:"Swissôtel Al Maqam Makkah",b:"Haram ke bilkul saath",hot:1,t:"Abraj Al Bait complex me, Haram tak asaan paidal access. Family rooms aur dining."}];
+var NAB=[
+{h:"Pullman ZamZam Madina",t:"Masjid an-Nabawi ke qareeb, walking distance. Family suites, buffet aur lift access."},
+{h:"Madinah Hilton",t:"Haram area me, paidal ziyarat ke liye munasib. King/Twin rooms, restaurants, Wi‑Fi."}];
+fill("haramGrid",NEAR.map(function(n){return '<div class="body"><span class="badge hot">High Priority</span><span class="badge">'+n.b+'</span><h3>'+n.h+'</h3><p>'+n.t+'</p></div>'}));
+fill("nabawiGrid",NAB.map(function(n){return '<div class="body"><span class="badge">Walking Distance</span><span class="badge">Family Rooms</span><h3>'+n.h+'</h3><p>'+n.t+'</p><div class="tags"><span>Wi‑Fi</span><span>Restaurant</span><span>Lift</span></div></div>'}));
+var k=0;HOTELS.forEach(function(h){h.rooms.forEach(function(r){add("galleryGrid",'<div class="tile" style="background:linear-gradient(135deg,'+h.c+')">'+h.icon+'</div><div class="body"><h4>'+r.n+'</h4><div class="meta">'+h.name+'</div><div class="acts"><a class="yt" href="'+r.video+'" target="_blank" rel="noopener">▶ Video</a></div></div>',"mini",k++,4)})});
+fill("exploreGrid",[["🕋","Makkah","Umrah aur Hajj ka muqaddas shehar."],["🕌","Madinah","Masjid an-Nabawi aur ziyarat ki jagahen."],["🌊","Jeddah","Red Sea corniche, Al-Balad old town."],["🪨","AlUla – Elephant Rock","Mashhoor sandstone rock formation aur registan ke nazare."]].map(function(x){return '<div class="body"><span class="ic">'+x[0]+'</span><h3>'+x[1]+'</h3><p>'+x[2]+'</p></div>'}));
+fill("servicesGrid",[["✈️","Airport Pickup"],["🚌","Local Transport"],["👨‍👩‍👧‍👦","Family Tours"],["🕋","Umrah Travel Assistance"]].map(function(x){return '<div class="body"><span class="ic">'+x[0]+'</span><h3>'+x[1]+'</h3></div>'}));
+fill("facGrid",[["🏊","Swimming Pool"],["🍳","Breakfast"],["📶","Wi‑Fi"],["🅿️","Parking"],["🍽️","Restaurant"],["👪","Family Facilities"]].map(function(x){return '<div class="body"><span class="ic">'+x[0]+'</span><h3>'+x[1]+'</h3></div>'}));
+
+
+<a href="https://grandtravel.space/"> 
+    <img src="https://grandtravel.space/assets/images/logo.png" style="width:300px;margin:0 auto;" alt="Grand Travel & Tours Logo"></a>
+
+
+
+
+
+<div class="acts" style="justify-content:center"><a class="wa" href="'+wa("Assalam o Alaikum, "+x[1]+" ke baray me maloomat chahiye.")+'" target="_blank" rel="noopener">WhatsApp</a></div>
+</body>
+</html>

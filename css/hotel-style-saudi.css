@@ -96,7 +96,12 @@ footer{text-align:center;padding:30px 5% 100px;color:var(--mute);border-top:1px 
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.card,.hero h1 span,.hero p,.hero .btn{opacity:1!important;transform:none!important}}
 
 
-
+.logo {
+    display: block;
+    margin: 0 auto;
+    max-width: 1700px;
+    height: auto;
+  }
 /* Navbar */
 
 
