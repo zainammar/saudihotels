@@ -1,0 +1,25 @@
+/* ---- CSS Grid (JS ki jagah) ---- */
+.grid{display:grid;gap:22px;grid-template-columns:1fr}
+@media (min-width:600px){.grid-2,.grid-3,.grid-4{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:992px){.grid-3{grid-template-columns:repeat(3,1fr)}.grid-4{grid-template-columns:repeat(4,1fr)}}
+.grid>.card{display:flex;flex-direction:column;align-self:start}
+
+/* Banner / tile gradients (pehle inline JS style the) */
+.g-a{background:linear-gradient(135deg,#0B1F3A,#1565C0)}
+.g-b{background:linear-gradient(135deg,#1565C0,#42A5F5)}
+.g-c{background:linear-gradient(135deg,#0B1F3A,#42A5F5)}
+.g-d{background:linear-gradient(135deg,#1565C0,#0B1F3A)}
+.g-e{background:linear-gradient(135deg,#42A5F5,#0B1F3A)}
+
+/* View Rooms: JS toggle ki jagah <details> */
+details.rooms summary{list-style:none;cursor:pointer}
+details.rooms summary::-webkit-details-marker{display:none}
+details.rooms[open] summary{font-size:0}
+details.rooms[open] summary::after{content:"Hide Rooms";font-size:1rem}
+
+/* Scroll reveal ki jagah simple CSS fade-in */
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.card{animation:fadeUp .6s ease both}
+.grid>.card:nth-child(4n+2){animation-delay:.11s}
+.grid>.card:nth-child(4n+3){animation-delay:.22s}
+.grid>.card:nth-child(4n+4){animation-delay:.33s}
