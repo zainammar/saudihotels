@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hotels in Riyadh – Saudi Stays</title>
+<meta name="description" content="Riyadh ke hotels, rooms, room videos aur WhatsApp booking – Saudi Stays.">
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/city.css">
+<link rel="stylesheet" href="css/hotel-style-saudi.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+<script>
+(function(){var t;try{t=localStorage.getItem("theme")}catch(e){}
+if(!t)t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";
+document.documentElement.setAttribute("data-theme",t)})();
+</script>
+</head>
+<body data-city="riyadh">
+
+<div class="topnav" id="myTopnav">
+  <a href="index.html">Home</a>
+  <a href="makkah.html">Makkah</a>
+  <a href="madinah.html">Madinah</a>
+  <a href="jeddah.html">Jeddah</a>
+  <a href="riyadh.html">Riyadh</a>
+  <a href="index.html#services">Services</a>
+  <a href="https://grandtravel.space/">Grand Travel & Tours</a>
+  <a href="#contact">Contact</a>
+  <a href="javascript:void(0);" class="icon" onclick="var x=document.getElementById('myTopnav');x.className=x.className==='topnav'?'topnav responsive':'topnav'"><i class="fa fa-bars"></i></a>
+</div>
+<header><b>GrandStay</b><nav></nav>
+<button id="theme" aria-label="Toggle dark mode"><span>🌙</span></button></header>
+
+<div class="hero" id="hero">
+<h1 id="title">Riyadh</h1>
+<p id="intro"></p>
+<a class="btn" href="#hotels">Hotels dekhein</a>
+</div>
+
+<section id="hotels"><h2 id="hotelsTitle">Hotels</h2><div class="crumb"><a href="index.html">Home</a> › <span id="crumbName"></span></div><div class="grid row-3" id="hotelGrid"></div></section>
+<section id="places" class="alt"><h2 id="placesTitle">Places to Visit</h2><div class="grid row-4" id="placesGrid"></div></section>
+<section id="gallery"><h2>Room Gallery</h2><div class="grid row-4" id="galleryGrid"></div></section>
+<section id="cities" class="alt"><h2>Dusre Shehar</h2><div class="citylinks" id="cityLinks"></div></section>
+
+<section id="contact" class="contact"><h2>Book via WhatsApp</h2>
+<div class="grid row-9" style="align-items:center">
+<p class="grid-item">Booking, rates aur availability ke liye humein WhatsApp karein.</p>
+<div class="grid-item"><a class="btn" id="waBtn" href="#" target="_blank" rel="noopener">WhatsApp: 0300 9224346</a></div>
+</div></section>
+<footer>© 2026 Saudi Stays · <a href="https://wa.me/923009224346" target="_blank" rel="noopener">03009224346</a></footer>
+<a class="fab" id="fab" href="#" target="_blank" rel="noopener" aria-label="WhatsApp">&#9990;</a>
+
+<script src="js/hotels.js"></script>
+<script>
+var slug=document.body.getAttribute("data-city"),C=CITIES[slug];
+document.title=C.title+" – Saudi Stays";
+document.getElementById("intro").textContent=C.intro;
+document.getElementById("hotelsTitle").textContent=C.title;
+document.getElementById("crumbName").textContent=C.name;
+document.getElementById("placesTitle").textContent="Places to Visit in "+C.name;
+document.getElementById("waBtn").href=wa("Assalam o Alaikum, "+C.name+" ke hotels ki booking ke baray me maloomat chahiye.");
+document.getElementById("fab").href=wa("Assalam o Alaikum, "+C.name+" ke hotels ke baray me maloomat chahiye.");
+
+function add(id,html,cls,i,n){var c=document.getElementById(id),e=document.createElement("div");e.className="card "+cls;e.style.transitionDelay=(i%n)*110+"ms";e.innerHTML=html;c.appendChild(e);return e}
+
+var list=HOTELS.filter(function(h){return h.city===C.name});
+if(!list.length){document.getElementById("hotelGrid").outerHTML='<p class="empty">Is shehar ke hotels jald add honge. WhatsApp par rabta karein.</p>';document.getElementById("gallery").style.display="none"}
+list.forEach(function(h,i){
+ var rooms=h.rooms.map(function(r){
+  var msg="Assalam o Alaikum, "+h.name+" ("+r.n+") ki booking ke baray me maloomat chahiye.";
+  return '<div class="room"><h4>'+r.n+'</h4><p>'+r.d+'</p><div class="acts"><a class="yt" href="'+r.video+'" target="_blank" rel="noopener">▶ Room Video</a><a class="wa" href="'+wa(msg)+'" target="_blank" rel="noopener">WhatsApp</a></div></div>'}).join("");
+ var el=add("hotelGrid",'<div class="banner" style="background:linear-gradient(135deg,'+h.c+')"><i>'+h.icon+'</i></div><div class="body"><h3>'+h.name+'</h3><div class="meta">'+h.city+' · '+"★".repeat(h.stars)+'</div><p>'+h.desc+'</p><div class="tags">'+h.tags.map(function(t){return '<span>'+t+'</span>'}).join("")+'</div><button class="toggle" aria-expanded="false">View Rooms</button><div class="rooms"><div>'+rooms+'</div></div></div>',"",i,3);
+ var b=el.querySelector(".toggle");
+ b.onclick=function(){var o=el.classList.toggle("open");b.firstChild.nodeValue=o?"Hide Rooms":"View Rooms";b.setAttribute("aria-expanded",o)};
+});
+
+C.places.forEach(function(x,i){add("placesGrid",'<div class="body"><span class="ic">'+x[0]+'</span><h3>'+x[1]+'</h3><p>'+x[2]+'</p></div>',"mini",i,4)});
+
+var k=0;list.forEach(function(h){h.rooms.forEach(function(r){add("galleryGrid",'<div class="tile" style="background:linear-gradient(135deg,'+h.c+')">'+h.icon+'</div><div class="body"><h4>'+r.n+'</h4><div class="meta">'+h.name+'</div><div class="acts"><a class="yt" href="'+r.video+'" target="_blank" rel="noopener">▶ Video</a></div></div>',"mini",k++,4)})});
+
+document.getElementById("cityLinks").innerHTML=Object.keys(CITIES).map(function(s){return '<a href="'+s+'.html"'+(s===slug?' class="cur"':'')+'>'+CITIES[s].icon+' '+CITIES[s].name+'</a>'}).join("");
+
+var t=document.getElementById("title");t.setAttribute("aria-label",t.textContent);
+t.innerHTML=t.textContent.split("").map(function(c,i){return '<span aria-hidden="true" style="animation-delay:'+(i*45)+'ms">'+(c===" "?"&nbsp;":c)+'</span>'}).join("");
+var hero=document.getElementById("hero");
+for(var s=0;s<26;s++){var d=document.createElement("i");d.className="star";d.style.cssText="left:"+Math.random()*100+"%;top:"+Math.random()*80+"%;animation-delay:"+(Math.random()*4)+"s;transform-origin:center";hero.appendChild(d)}
+
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("show","in");io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll(".card,section").forEach(function(n){io.observe(n)});
+
+var root=document.documentElement,tb=document.getElementById("theme");
+function sync(){tb.firstChild.textContent=root.getAttribute("data-theme")==="dark"?"☀️":"🌙"}
+tb.onclick=function(){var n=root.getAttribute("data-theme")==="dark"?"light":"dark";root.setAttribute("data-theme",n);try{localStorage.setItem("theme",n)}catch(e){}sync()};
+sync();
+</script>
+</body>
+</html>
